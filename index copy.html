@@ -1,5 +1,107 @@
-[
-  {
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icon.jpg">
+    <title>Smite Quiz</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+        .dark-mode {
+            background-color: #343a40;
+            color: #f8f9fa;
+        }
+        .dark-mode .card {
+            background-color: #495057;
+        }
+        .dark-mode .modal-content {
+            background-color: #343a40;
+            color: #f8f9fa;
+        }
+    </style>
+
+
+
+</head>
+
+<body class="dark-mode">
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-center">
+        <button id="dark-mode-toggle" class="btn btn-secondary">
+            <i id="dark-mode-icon" class="fas fa-moon"></i> Toggle Dark Mode
+        </button>
+    </nav>
+
+    <div class="container mt-4">
+        <h1 style="font-size: 2.5em; text-align: center;">Smite Quiz</h1>
+        <p style="font-size: 1.5em; text-align: center;">Test your Smite knowledge!</p>
+
+
+    
+            <div class="button-container">
+                <button id="mode1">Mode 1</button>
+                <button id="mode2">Mode 2</button>
+            </div>
+
+    </div>
+    
+        <div id="game-container" class="my-4">
+            <div class="card text-center">
+                <div class="d-flex justify-content-center">
+                    <img id="game-image" class="card-img-top" src="https://static.wikia.nocookie.net/smite_gamepedia/images/5/5a/T_Achilles_Default_Icon.png/revision/latest?cb=20180227153129" alt="Game Image" style="width: 100px; height: auto; padding-top: 20px;">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Guess the god!</h5>
+                    <div class="d-flex justify-content-center">
+                        <div class="d-grid gap-2" id="button-container" style="gap: 10px;">
+                            <!-- Buttons will be inserted here by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- Feedback Modal -->
+    <div class="modal fade" id="gameOverModal" tabindex="-1" role="dialog" aria-labelledby="gameOverModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="gameOverModalLabel">Game Over</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-center mb-2">Game Over!</p>
+                    <p class="text-center mb-2">You scored <strong id="final-score">0</strong> out of <strong id="total-questions">10</strong>.</p>
+                    <p class="text-center">Try again!</p>
+                    <p class="text-center">There were still <strong id="remaining-questions">0</strong> questions to go.</p>
+                </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-center mt-3">
+            <button id="end-quiz" class="btn btn-danger">End Quiz</button>
+        </div>
+        <p id="question-counter">Question: 1 / 10</p>
+        <p id="score">Score: 0</p>
+        
+    </div>
+
+    <script>
+// Example array of gods, you would fetch this data from the Smite Wiki
+    const gods = [
+    {
     "name": "Achilles",
     "icon": "Icons/Achilles.png",
     "abilities": [
@@ -1583,4 +1685,131 @@
       "God Abilities/Zhong Kui/ability_4.png"
     ]
   }
-]
+    ];
+
+
+    function generateAbilityPaths(godName, numAbilities) {
+    let paths = [];
+    for (let i = 0; i < numAbilities; i++) {
+        let abilityName = i === 0 ? "passive" : `ability_${i}`;
+        paths.push(`God Abilities/${godName}/${abilityName}.png`);
+    }
+    return paths;
+    }
+
+
+    let currentGodIndex = 0;
+
+
+    function getRandomGods(correctGod) {
+        let godsCopy = gods.filter(god => god.name !== correctGod.name);
+        let randomGods = [];
+        for (let i = 0; i < 3; i++) {
+            let randomIndex = Math.floor(Math.random() * godsCopy.length);
+            randomGods.push(godsCopy[randomIndex]);
+            godsCopy.splice(randomIndex, 1); // Remove the selected god to avoid duplicates
+        }
+        return randomGods;
+    }
+
+
+    function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    }
+
+
+
+    document.getElementById('mode1').addEventListener('click', function() {
+    // Change to game mode 1
+    });
+
+    document.getElementById('mode2').addEventListener('click', function() {
+        // Change to game mode 2
+    });
+
+
+    
+    document.getElementById('end-quiz').addEventListener('click', endQuiz);
+
+
+    let score = 0;
+    let currentQuestionNumber = 0;
+
+    function endQuiz() {
+        document.getElementById('final-score').textContent = score;
+        document.getElementById('total-questions').textContent = currentQuestionNumber;
+        let remainingQuestions = gods.length - currentQuestionNumber;
+        document.getElementById('remaining-questions').textContent = remainingQuestions;
+        $('#gameOverModal').modal('show');
+    }
+
+
+    document.getElementById('dark-mode-toggle').addEventListener('click', function() {
+    document.body.classList.toggle('dark-mode');
+        });
+
+
+        function loadQuestion() {
+        // Get the current god
+        let correctGod = gods[currentGodIndex];
+
+        // Get three random gods that are not the correct god
+        let incorrectGods = getRandomGods(correctGod);
+
+        // Combine the correct god with the incorrect ones and shuffle
+        let options = [correctGod, ...incorrectGods];
+        
+        shuffleArray(options);
+
+        // Set the question image
+        document.getElementById('game-image').src = correctGod.icon;
+        document.getElementById('question-counter').textContent = `Question: ${currentQuestionNumber + 1} / ${gods.length}`;
+
+        // Clear old buttons and create new ones
+        const buttonContainer = document.getElementById('button-container');
+        buttonContainer.innerHTML = '';
+        options.forEach(option => {
+            const btn = document.createElement('button');
+            btn.className = 'btn btn-primary mx-3 mb-2';
+            btn.type = 'button';
+            btn.textContent = option.name;
+            btn.onclick = () => {
+                if (option.name === correctGod.name) {
+                    // Correct answer
+                    score++;
+                }
+                currentQuestionNumber++;
+                if (currentQuestionNumber < gods.length) {
+                    loadQuestion();
+                } else {
+                    // Game over
+                    document.getElementById('final-score').textContent = score;
+                    document.getElementById('total-questions').textContent = gods.length;
+                    $('#gameOverModal').modal('show');
+                }
+            };
+            buttonContainer.appendChild(btn);
+        });
+
+        // Update the score and question counter
+        document.getElementById('score').textContent = `Score: ${score}`;
+
+        // Increment currentGodIndex and reset if necessary
+        currentGodIndex++;
+        if (currentGodIndex === gods.length) {
+            currentGodIndex = 0;
+        }
+    }
+
+    // Call loadQuestion to start the game
+    loadQuestion();
+    </script>
+
+    <!-- Include jQuery and Bootstrap JS for modal functionality -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
