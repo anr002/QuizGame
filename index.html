@@ -48,7 +48,7 @@
                     <img id="game-image" class="card-img-top" src="https://static.wikia.nocookie.net/smite_gamepedia/images/5/5a/T_Achilles_Default_Icon.png/revision/latest?cb=20180227153129" alt="Game Image" style="width: 100px; height: auto; padding-top: 20px;">
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title">Question Title</h5>
+                    <h5 class="card-title">Guess the god!</h5>
                     <div class="d-flex justify-content-center">
                         <div class="d-grid gap-2" id="button-container" style="gap: 10px;">
                             <!-- Buttons will be inserted here by JavaScript -->
@@ -145,6 +145,12 @@
         document.getElementById('remaining-questions').textContent = remainingQuestions;
         $('#gameOverModal').modal('show');
     }
+
+
+    document.getElementById('dark-mode-toggle').addEventListener('click', function() {
+    document.body.classList.toggle('dark-mode');
+        });
+
 
     function loadQuestion() {
         // Randomly select the correct god
