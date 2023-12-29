@@ -1720,6 +1720,25 @@
         startGameMode2();
     });
 
+
+
+
+    function endQuiz() {
+    // Show the game over modal
+    $('#gameOverModal').modal('show');
+
+    // Update the final score in the modal
+    document.getElementById('final-score').textContent = score;
+
+    // Update the total number of questions in the modal
+    document.getElementById('total-questions').textContent = gods.length;
+
+    // Calculate and update the number of remaining questions in the modal
+    let remainingQuestions = gods.length - currentQuestionNumber;
+    document.getElementById('remaining-questions').textContent = remainingQuestions;
+}
+
+
 function resetGame() {
     // Reset the game state if necessary
     // This could include resetting the score, the current question number, etc.
@@ -1735,6 +1754,10 @@ function shuffleArray(array) {
     }
 }
 
+document.getElementById('end-quiz').addEventListener('click', function() {
+    endQuiz();
+    });
+
 function getRandomGods(correctGod) {
     let incorrectGods = [];
     while (incorrectGods.length < 3) {
@@ -1747,6 +1770,13 @@ function getRandomGods(correctGod) {
 }
 
 
+    function toggleDarkMode() {
+        document.body.classList.toggle('dark-mode');
+    }
+    
+    document.getElementById('dark-mode-toggle').addEventListener('click', function() {
+        toggleDarkMode();
+    });
 
 // Declare these variables outside of the function so they can be accessed by other functions
 let currentGodIndex = 0;
