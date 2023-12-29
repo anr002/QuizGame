@@ -1,5 +1,7 @@
 # Smite Quiz Game
 
+## Temporary link:  https://anr002.github.io/QuizGame/
+
 ## Overview
 Wanting to expand my coding horizons, I created a fun and interactive quiz game based on one of my favorite games, Smite. The game tests your knowledge about the various gods in Smite, their abilities, and more. I've used HTML, CSS, and Bootstrap for the frontend, and Python for the backend to scrape data and images from the Smite Wiki.
 
