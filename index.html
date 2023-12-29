@@ -1704,14 +1704,20 @@
     ];
 
 
-    document.getElementById('mode1').addEventListener('click', function() {
+    document.addEventListener('DOMContentLoaded', (event) => {
     startGameMode1();
-});
+    });
 
-document.getElementById('mode2').addEventListener('click', function() {
+    
+    document.getElementById('mode1').addEventListener('click', function() {
     resetGame();
-    startGameMode2();
-});
+    startGameMode1();
+    });
+
+    document.getElementById('mode2').addEventListener('click', function() {
+        resetGame();
+        startGameMode2();
+    });
 
 function resetGame() {
     // Reset the game state if necessary
@@ -1748,18 +1754,29 @@ let score = 0;
 
 function startGameMode1() {
     // Hide abilities
+    let abilities = document.querySelectorAll('.ability');
+    abilities.forEach(ability => {
+        ability.style.display = 'none';
+    });
+
+    // Hide the ability container
     document.querySelector('.ability-container').style.display = 'none';
+
     // Show the god icon
     document.getElementById('game-image').style.display = 'block';
+
     // Shuffle the gods array
     shuffleArray(gods);
+
     // Reset variables
     currentGodIndex = 0;
     currentQuestionNumber = 0;
     score = 0;
+
     // Call loadQuestionMode1 to start the game
     loadQuestionMode1();
 }
+
 
 function loadQuestionMode1() {
     // Get the current god
@@ -1832,10 +1849,19 @@ function startGameMode2() {
         // Display the abilities to the player
         // This will depend on your HTML structure
         // For example, you could have an element for each ability
-        for (let i = 0; i < abilities.length; i++) {
-            let abilityElement = document.getElementById(`ability${i + 1}`);
-            abilityElement.src = abilities[i];
+        for (let i = 0; i < 4; i++) {
+        let abilityElement = document.getElementById(`ability${i + 1}`);
+        if (abilityElement) {
+            if (abilities[i]) { // Check if the ability exists
+                abilityElement.src = abilities[i];
+                abilityElement.style.display = 'block';
+            } else {
+                abilityElement.style.display = 'none'; // Hide the element if the ability does not exist
+            }
+        } else {
+            console.error(`Element with ID ability${i + 1} not found.`);
         }
+    }
 
         // Clear old buttons and create new ones
         const buttonContainer = document.getElementById('button-container');
