@@ -1,0 +1,518 @@
+[
+    {
+        "name": "Achilles",
+        "icon": "Icons/Achilles.png"
+    },
+    {
+        "name": "Agni",
+        "icon": "Icons/Agni.png"
+    },
+    {
+        "name": "Ah Muzen Cab",
+        "icon": "Icons/AMC.png"
+    },
+    {
+        "name": "Ah Puch",
+        "icon": "Icons/Ah Puch.png"
+    },
+    {
+        "name": "Amaterasu",
+        "icon": "Icons/Amaterasu.png"
+    },
+    {
+        "name": "Anhur",
+        "icon": "Icons/Anhur.png"
+    },
+    {
+        "name": "Anubis",
+        "icon": "Icons/Anubis.png"
+    },
+    {
+        "name": "Ao Kuang",
+        "icon": "Icons/Ao Kuang.png"
+    },
+    {
+        "name": "Aphrodite",
+        "icon": "Icons/Aphrodite.png"
+    },
+    {
+        "name": "Apollo",
+        "icon": "Icons/Apollo.png"
+    },
+    {
+        "name": "Arachne",
+        "icon": "Icons/Arachne.png"
+    },
+    {
+        "name": "Ares",
+        "icon": "Icons/Ares.png"
+    },
+    {
+        "name": "Artemis",
+        "icon": "Icons/Artemis.png"
+    },
+    {
+        "name": "Artio",
+        "icon": "Icons/Artio.png"
+    },
+    {
+        "name": "Athena",
+        "icon": "Icons/Athena.png"
+    },
+    {
+        "name": "Atlas",
+        "icon": "Icons/Atlas.png"
+    },
+    {
+        "name": "Awilix",
+        "icon": "Icons/Awilix.png"
+    },
+    {
+        "name": "Baba Yaga",
+        "icon": "Icons/Baba Yaga.png"
+    },
+    {
+        "name": "Bacchus",
+        "icon": "Icons/Bacchus.png"
+    },
+    {
+        "name": "Bakasura",
+        "icon": "Icons/Bakasura.png"
+    },
+    {
+        "name": "Bake Kujira",
+        "icon": "Icons/Bake Kujira.png"
+    },
+    {
+        "name": "Baron Samedi",
+        "icon": "Icons/Baron Samedi.png"
+    },
+    {
+        "name": "Bastet",
+        "icon": "Icons/Bastet.png"
+    },
+    {
+        "name": "Bellona",
+        "icon": "Icons/Bellona.png"
+    },
+    {
+        "name": "Cabrakan",
+        "icon": "Icons/Cabrakan.png"
+    },
+    {
+        "name": "Camazotz",
+        "icon": "Icons/Camazotz.png"
+    },
+    {
+        "name": "Cerberus",
+        "icon": "Icons/Cerberus.png"
+    },
+    {
+        "name": "Cernunnos",
+        "icon": "Icons/Cernunnos.png"
+    },
+    {
+        "name": "Chaac",
+        "icon": "Icons/Chaac.png"
+    },
+    {
+        "name": "Chang E",
+        "icon": "Icons/Chang E.png"
+    },
+    {
+        "name": "Charon",
+        "icon": "Icons/Charon.png"
+    },
+    {
+        "name": "Charybdis",
+        "icon": "Icons/Charybdis.png"
+    },
+    {
+        "name": "Chernobog",
+        "icon": "Icons/Chernobog.png"
+    },
+    {
+        "name": "Chiron",
+        "icon": "Icons/Chiron.png"
+    },
+    {
+        "name": "Chronos",
+        "icon": "Icons/Chronos.png"
+    },
+    {
+        "name": "Cliodhna",
+        "icon": "Icons/Cliodhna.png"
+    },
+    {
+        "name": "Cthulhu",
+        "icon": "Icons/Cthulhu.png"
+    },
+    {
+        "name": "Cu Chulainn",
+        "icon": "Icons/Cu Chulainn.png"
+    },
+    {
+        "name": "Cupid",
+        "icon": "Icons/Cupid.png"
+    },
+    {
+        "name": "Da Ji",
+        "icon": "Icons/Da Ji.png"
+    },
+    {
+        "name": "Danzaburou",
+        "icon": "Icons/Danzaburou.png"
+    },
+    {
+        "name": "Discordia",
+        "icon": "Icons/Discordia.png"
+    },
+    {
+        "name": "Er Lang Shen",
+        "icon": "Icons/Er Lang Shen.png"
+    },
+    {
+        "name": "Eset",
+        "icon": "Icons/Eset.png"
+    },
+    {
+        "name": "Fafnir",
+        "icon": "Icons/Fafnir.png"
+    },
+    {
+        "name": "Fenrir",
+        "icon": "Icons/Fenrir.png"
+    },
+    {
+        "name": "Freya",
+        "icon": "Icons/Freya.png"
+    },
+    {
+        "name": "Ganesha",
+        "icon": "Icons/Ganesha.png"
+    },
+    {
+        "name": "Geb",
+        "icon": "Icons/Geb.png"
+    },
+    {
+        "name": "Gilgamesh",
+        "icon": "Icons/Gilgamesh.png"
+    },
+    {
+        "name": "Guan Yu",
+        "icon": "Icons/Guan Yu.png"
+    },
+    {
+        "name": "Hachiman",
+        "icon": "Icons/Hachiman.png"
+    },
+    {
+        "name": "Hades",
+        "icon": "Icons/Hades.png"
+    },
+    {
+        "name": "He Bo",
+        "icon": "Icons/He Bo.png"
+    },
+    {
+        "name": "Heimdallr",
+        "icon": "Icons/Heimdallr.png"
+    },
+    {
+        "name": "Hel",
+        "icon": "Icons/Hel.png"
+    },
+    {
+        "name": "Hera",
+        "icon": "Icons/Hera.png"
+    },
+    {
+        "name": "Hercules",
+        "icon": "Icons/Hercules.png"
+    },
+    {
+        "name": "Horus",
+        "icon": "Icons/Horus.png"
+    },
+    {
+        "name": "Hou Yi",
+        "icon": "Icons/Hou Yi.png"
+    },
+    {
+        "name": "Hun Batz",
+        "icon": "Icons/Hun Batz.png"
+    },
+    {
+        "name": "Ishtar",
+        "icon": "Icons/Ishtar.png"
+    },
+    {
+        "name": "Ix Chel",
+        "icon": "Icons/Ix Chel.png"
+    },
+    {
+        "name": "Izanami",
+        "icon": "Icons/Izanami.png"
+    },
+    {
+        "name": "Janus",
+        "icon": "Icons/Janus.png"
+    },
+    {
+        "name": "Jing Wei",
+        "icon": "Icons/Jing Wei.png"
+    },
+    {
+        "name": "Jormungandr",
+        "icon": "Icons/Jormungandr.png"
+    },
+    {
+        "name": "Kali",
+        "icon": "Icons/Kali.png"
+    },
+    {
+        "name": "Khepri",
+        "icon": "Icons/Khepri.png"
+    },
+    {
+        "name": "King Arthur",
+        "icon": "Icons/King Arthur.png"
+    },
+    {
+        "name": "Kukulkan",
+        "icon": "Icons/Kukulkan.png"
+    },
+    {
+        "name": "Kumbhakarna",
+        "icon": "Icons/Kumbhakarna.png"
+    },
+    {
+        "name": "Kuzenbo",
+        "icon": "Icons/Kuzenbo.png"
+    },
+    {
+        "name": "Lancelot",
+        "icon": "Icons/Lancelot.png"
+    },
+    {
+        "name": "Loki",
+        "icon": "Icons/Loki.png"
+    },
+    {
+        "name": "Maman Brigitte",
+        "icon": "Icons/Maman Brigitte.png"
+    },
+    {
+        "name": "Martichoras",
+        "icon": "Icons/Martichoras.png"
+    },
+    {
+        "name": "Maui",
+        "icon": "Icons/Maui.png"
+    },
+    {
+        "name": "Medusa",
+        "icon": "Icons/Medusa.png"
+    },
+    {
+        "name": "Mercury",
+        "icon": "Icons/Mercury.png"
+    },
+    {
+        "name": "Merlin",
+        "icon": "Icons/Merlin.png"
+    },
+    {
+        "name": "Morgan Le Fay",
+        "icon": "Icons/Morgan Le Fay.png"
+    },
+    {
+        "name": "Mulan",
+        "icon": "Icons/Mulan.png"
+    },
+    {
+        "name": "Ne Zha",
+        "icon": "Icons/Ne Zha.png"
+    },
+    {
+        "name": "Neith",
+        "icon": "Icons/Neith.png"
+    },
+    {
+        "name": "Nemesis",
+        "icon": "Icons/Nemesis.png"
+    },
+    {
+        "name": "Nike",
+        "icon": "Icons/Nike.png"
+    },
+    {
+        "name": "Nox",
+        "icon": "Icons/Nox.png"
+    },
+    {
+        "name": "Nu Wa",
+        "icon": "Icons/Nu Wa.png"
+    },
+    {
+        "name": "Odin",
+        "icon": "Icons/Odin.png"
+    },
+    {
+        "name": "Olorun",
+        "icon": "Icons/Olorun.png"
+    },
+    {
+        "name": "Osiris",
+        "icon": "Icons/Osiris.png"
+    },
+    {
+        "name": "Pele",
+        "icon": "Icons/Pele.png"
+    },
+    {
+        "name": "Persephone",
+        "icon": "Icons/Persephone.png"
+    },
+    {
+        "name": "Poseidon",
+        "icon": "Icons/Poseidon.png"
+    },
+    {
+        "name": "Ra",
+        "icon": "Icons/Ra.png"
+    },
+    {
+        "name": "Raijin",
+        "icon": "Icons/Raijin.png"
+    },
+    {
+        "name": "Rama",
+        "icon": "Icons/Rama.png"
+    },
+    {
+        "name": "Ratatoskr",
+        "icon": "Icons/Ratatoskr.png"
+    },
+    {
+        "name": "Ravana",
+        "icon": "Icons/Ravana.png"
+    },
+    {
+        "name": "Scylla",
+        "icon": "Icons/Scylla.png"
+    },
+    {
+        "name": "Serqet",
+        "icon": "Icons/Serqet.png"
+    },
+    {
+        "name": "Set",
+        "icon": "Icons/Set.png"
+    },
+    {
+        "name": "Shiva",
+        "icon": "Icons/Shiva.png"
+    },
+    {
+        "name": "Skadi",
+        "icon": "Icons/Skadi.png"
+    },
+    {
+        "name": "Sobek",
+        "icon": "Icons/Sobek.png"
+    },
+    {
+        "name": "Sol",
+        "icon": "Icons/Sol.png"
+    },
+    {
+        "name": "Sun Wukong",
+        "icon": "Icons/Sun Wukong.png"
+    },
+    {
+        "name": "Surtr",
+        "icon": "Icons/Surtr.png"
+    },
+    {
+        "name": "Susano",
+        "icon": "Icons/Susano.png"
+    },
+    {
+        "name": "Sylvanus",
+        "icon": "Icons/Sylvanus.png"
+    },
+    {
+        "name": "Terra",
+        "icon": "Icons/Terra.png"
+    },
+    {
+        "name": "Thanatos",
+        "icon": "Icons/Thanatos.png"
+    },
+    {
+        "name": "The Morrigan",
+        "icon": "Icons/The Morrigan.png"
+    },
+    {
+        "name": "Thor",
+        "icon": "Icons/Thor.png"
+    },
+    {
+        "name": "Thoth",
+        "icon": "Icons/Thoth.png"
+    },
+    {
+        "name": "Tiamat",
+        "icon": "Icons/Tiamat.png"
+    },
+    {
+        "name": "Tsukuyomi",
+        "icon": "Icons/Tsukuyomi.png"
+    },
+    {
+        "name": "Tyr",
+        "icon": "Icons/Tyr.png"
+    },
+    {
+        "name": "Ullr",
+        "icon": "Icons/Ullr.png"
+    },
+    {
+        "name": "Vamana",
+        "icon": "Icons/Vamana.png"
+    },
+    {
+        "name": "Vulcan",
+        "icon": "Icons/Vulcan.png"
+    },
+    {
+        "name": "Xbalanque",
+        "icon": "Icons/Xbalanque.png"
+    },
+    {
+        "name": "Xing Tian",
+        "icon": "Icons/Xing Tian.png"
+    },
+    {
+        "name": "Yemoja",
+        "icon": "Icons/Yemoja.png"
+    },
+    {
+        "name": "Ymir",
+        "icon": "Icons/Ymir.png"
+    },
+    {
+        "name": "Yu Huang",
+        "icon": "Icons/Yu Huang.png"
+    },
+    {
+        "name": "Zeus",
+        "icon": "Icons/Zeus.png"
+    },
+    {
+        "name": "Zhong Kui",
+        "icon": "Icons/Zhong Kui.png"
+    }
+]
