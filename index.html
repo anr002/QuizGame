@@ -63,11 +63,12 @@
     
         <div id="game-container" class="my-4">
             <div class="card text-center">
-                <div class="d-flex justify-content-center">
-                    <img id="game-image" class="card-img-top" src="https://static.wikia.nocookie.net/smite_gamepedia/images/5/5a/T_Achilles_Default_Icon.png/revision/latest?cb=20180227153129" alt="Game Image" style="width: 100px; height: auto; padding-top: 20px;">
-                </div>
                 <div class="card-body">
                     <h5 class="card-title">Guess the god!</h5>
+
+                    <div class="d-flex justify-content-center">
+                        <img id="game-image" class="card-img-top" src="https://static.wikia.nocookie.net/smite_gamepedia/images/5/5a/T_Achilles_Default_Icon.png/revision/latest?cb=20180227153129" alt="Game Image" style="width: 100px; height: auto; padding-top: 2px;">
+                    </div>
                     <div class="ability-container d-flex justify-content-center">
                         <img class="ability mx-2" id="ability1" src="" alt="Ability 1">
                         <img class="ability mx-2" id="ability2" src="" alt="Ability 2">
@@ -1708,7 +1709,7 @@
     startGameMode1();
     });
 
-    
+
     document.getElementById('mode1').addEventListener('click', function() {
     resetGame();
     startGameMode1();
