@@ -1,0 +1,24 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+.dark-mode {
+    background-color: #343a40;
+    color: #f8f9fa;
+}
+.dark-mode .card {
+    background-color: #495057;
+}
+.dark-mode .modal-content {
+    background-color: #343a40;
+    color: #f8f9fa;
+}
+
+.ability-container {
+    margin-bottom: 20px; /* Adjust as needed */
+}
+
+.ability {
+    width: 100px; /* Adjust as needed */
+    height: 100px; /* Adjust as needed */
+}
