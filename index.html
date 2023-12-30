@@ -1858,29 +1858,28 @@ function loadQuestionMode1() {
     }
 }
 
+
+
 function startGameMode2() {
     // Show abilities
     document.querySelector('.ability-container').style.display = 'flex';
     // Hide the god icon
     document.getElementById('game-image').style.display = 'none';
-    // Declare and initialize score and currentQuestionNumber
-    let score = 0;
-    let currentQuestionNumber = 0;
-
-    // This is a new game mode
+    // Reset variables
+    score = 0;
+    currentQuestionNumber = 0;
+    // Start the game
     loadQuestionBasedOnAbilities();
+}
 
-    function loadQuestionBasedOnAbilities() {
-        // Randomly select a god
-        let correctGod = gods[Math.floor(Math.random() * gods.length)];
+function loadQuestionBasedOnAbilities() {
+    // Randomly select a god
+    let correctGod = gods[Math.floor(Math.random() * gods.length)];
+    // Get the god's abilities
+    let abilities = correctGod.abilities;
 
-        // Get the god's abilities
-        let abilities = correctGod.abilities;
-
-        // Display the abilities to the player
-        // This will depend on your HTML structure
-        // For example, you could have an element for each ability
-        for (let i = 0; i < 4; i++) {
+    // Display the abilities to the player
+    for (let i = 0; i < 4; i++) {
         let abilityElement = document.getElementById(`ability${i + 1}`);
         if (abilityElement) {
             if (abilities[i]) { // Check if the ability exists
@@ -1894,38 +1893,38 @@ function startGameMode2() {
         }
     }
 
-        // Clear old buttons and create new ones
-        const buttonContainer = document.getElementById('button-container');
-        buttonContainer.innerHTML = '';
-        let options = [correctGod, ...getRandomGods(correctGod)];
-        shuffleArray(options);
-        options.forEach(option => {
-            const btn = document.createElement('button');
-            btn.className = 'btn btn-primary mx-3 mb-2';
-            btn.type = 'button';
-            btn.textContent = option.name;
-            btn.onclick = () => {
-                if (option.name === correctGod.name) {
-                    // Correct answer
-                    score++;
-                }
-                currentQuestionNumber++;
-                if (currentQuestionNumber < gods.length) {
-                    loadQuestionBasedOnAbilities();
-                } else {
-                    // Game over
-                    document.getElementById('final-score').textContent = score;
-                    document.getElementById('total-questions').textContent = gods.length;
-                    $('#gameOverModal').modal('show');
-                }
-            };
-            buttonContainer.appendChild(btn);
-        });
+    // Clear old buttons and create new ones
+    const buttonContainer = document.getElementById('button-container');
+    buttonContainer.innerHTML = '';
+    let options = [correctGod, ...getRandomGods(correctGod)];
+    shuffleArray(options);
+    options.forEach(option => {
+        const btn = document.createElement('button');
+        btn.className = 'btn btn-primary mx-3 mb-2';
+        btn.type = 'button';
+        btn.textContent = option.name;
+        btn.onclick = () => {
+            if (option.name === correctGod.name) {
+                // Correct answer
+                score++;
+            }
+            currentQuestionNumber++;
+            if (currentQuestionNumber <= gods.length) {
+                loadQuestionBasedOnAbilities();
+            } else {
+                // Game over
+                document.getElementById('final-score').textContent = score;
+                document.getElementById('total-questions').textContent = gods.length;
+                $('#gameOverModal').modal('show');
+            }
+        };
+        buttonContainer.appendChild(btn);
+    });
 
-        // Update the score and question counter
-        document.getElementById('score').textContent = `Score: ${score}`;
-        document.getElementById('question-counter').textContent = `Question: ${currentQuestionNumber + 1} / ${gods.length}`;
-    }
+    // Update the score and question counter
+    document.getElementById('score').textContent = `Score: ${score}`;
+    document.getElementById('question-counter').textContent = `Question: ${currentQuestionNumber + 1} / ${gods.length}`;
+
 }
     </script>
 
