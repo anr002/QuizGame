@@ -22,3 +22,12 @@ body {
     width: 100px; /* Adjust as needed */
     height: 100px; /* Adjust as needed */
 }
+
+.hint-button-hidden {
+    visibility: hidden;
+}
+
+.hint-button-visible {
+    visibility: visible;
+    margin-bottom: 20px;
+}

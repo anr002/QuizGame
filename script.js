@@ -1601,7 +1601,7 @@
         startGameMode2();
     });
 
-
+    document.getElementById('hint-button').addEventListener('click', handleHint);
 
 
     function endQuiz() {
@@ -1666,6 +1666,9 @@ let score = 0;
 
 function startGameMode1() {
     // Hide abilities
+    document.getElementById('hint-button').classList.remove('hint-button-visible');
+    document.getElementById('hint-button').classList.add('hint-button-hidden');
+    
     let abilities = document.querySelectorAll('.ability');
     abilities.forEach(ability => {
         ability.style.display = 'none';
@@ -1743,6 +1746,9 @@ function loadQuestionMode1() {
 
 function startGameMode2() {
     // Show abilities
+    document.getElementById('hint-button').classList.remove('hint-button-hidden');
+    document.getElementById('hint-button').classList.add('hint-button-visible');
+
     document.querySelector('.ability-container').style.display = 'flex';
     // Hide the god icon
     document.getElementById('game-image').style.display = 'none';
@@ -1753,26 +1759,44 @@ function startGameMode2() {
     loadQuestionBasedOnAbilities();
 }
 
-function loadQuestionBasedOnAbilities() {
-    // Randomly select a god
-    let correctGod = gods[Math.floor(Math.random() * gods.length)];
-    // Get the god's abilities
-    let abilities = correctGod.abilities;
+function handleHint() {
+  if (hintCount < 4) {
+      hintCount++;
+      let abilityElement = document.getElementById(`ability${hintCount}`);
+      if (abilityElement && currentGodAbilities[hintCount - 1]) {
+          abilityElement.src = currentGodAbilities[hintCount - 1];
+          abilityElement.style.display = 'block';
+      } else {
+          console.error(`No ability found for hint count: ${hintCount}`);
+      }
+  }
+}
 
-    // Display the abilities to the player
-    for (let i = 0; i < 4; i++) {
-        let abilityElement = document.getElementById(`ability${i + 1}`);
-        if (abilityElement) {
-            if (abilities[i]) { // Check if the ability exists
-                abilityElement.src = abilities[i];
-                abilityElement.style.display = 'block';
-            } else {
-                abilityElement.style.display = 'none'; // Hide the element if the ability does not exist
-            }
-        } else {
-            console.error(`Element with ID ability${i + 1} not found.`);
-        }
-    }
+
+let currentGodAbilities = [];
+
+function loadQuestionBasedOnAbilities() {
+  hintCount = 1; // Reset hintCount for each new question
+
+  // Randomly select a god
+  let correctGod = gods[Math.floor(Math.random() * gods.length)];
+  // Get the god's abilities and store them in the currentGodAbilities variable
+  currentGodAbilities = correctGod.abilities;
+
+  // Initially, only display the first ability to the player
+  for (let i = 0; i < 4; i++) {
+      let abilityElement = document.getElementById(`ability${i + 1}`);
+      if (abilityElement) {
+          if (i === 0 && currentGodAbilities[i]) { // Only the first ability is displayed initially
+              abilityElement.src = currentGodAbilities[i];
+              abilityElement.style.display = 'block';
+          } else {
+              abilityElement.style.display = 'none'; // Hide the other abilities
+          }
+      } else {
+          console.error(`Element with ID ability${i + 1} not found.`);
+      }
+  }
 
     // Clear old buttons and create new ones
     const buttonContainer = document.getElementById('button-container');
@@ -1784,11 +1808,21 @@ function loadQuestionBasedOnAbilities() {
         btn.className = 'btn btn-primary mx-3 mb-2';
         btn.type = 'button';
         btn.textContent = option.name;
+        // In your button click handler
         btn.onclick = () => {
-            if (option.name === correctGod.name) {
-                // Correct answer
-                score++;
-            }
+          if (option.name === correctGod.name) {
+              // Correct answer
+              // Decrease the score increment based on the number of hints used
+              let scoreIncrement = 1; // Full points if no hints were used
+              if (hintCount === 2) {
+                  scoreIncrement = 0.75; // 75% of points if 1 hint was used
+              } else if (hintCount === 3) {
+                  scoreIncrement = 0.5; // 50% of points if 2 hints were used
+              } else if (hintCount >= 4) {
+                  scoreIncrement = 0.25; // 25% of points if 3 or more hints were used
+              }
+              score += scoreIncrement;
+          }
             currentQuestionNumber++;
             if (currentQuestionNumber <= gods.length) {
                 loadQuestionBasedOnAbilities();
