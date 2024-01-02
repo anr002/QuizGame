@@ -1,9 +1,10 @@
 import gods from './godsData.js';
 
 let currentGodAbilities = []; // Declare and initialize at the top of your script or inside DOMContentLoaded
-    let currentGodIndex = 0;
-    let currentQuestionNumber = 0;
-    let score = 0;
+let currentGodIndex = 0;
+let currentQuestionNumber = 0;
+let score = 0;
+let hintCount = 0;
     
 // Use the DOMContentLoaded event to ensure the DOM is fully loaded before running code that interacts with it
 document.addEventListener('DOMContentLoaded', (event) => {
