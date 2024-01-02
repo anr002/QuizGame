@@ -1586,4 +1586,4 @@ const gods = [
     ];
 
 
-    //export default gods;
+    export default gods;
